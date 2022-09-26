@@ -13,11 +13,11 @@ export default class UsersController {
         return response.json(users);
     }
 
-    public async creat(
+    public async create(
         request: Request,
         response: Response,
     ): Promise<Response> {
-        const { name, email, password } = request.body();
+        const { name, email, password } = request.body;
 
         const createUser = new CreateUserService();
 
