@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import CreateSessionsService from "../services/CreateSessionsService";
 
 export default class SessionsController {
-    public async creat(
+    public async create(
         request: Request,
         response: Response,
     ): Promise<Response> {
@@ -10,7 +10,7 @@ export default class SessionsController {
 
         const createSession = new CreateSessionsService();
 
-        const user = createSession.execute({
+        const user = await createSession.execute({
             email,
             password,
         });
